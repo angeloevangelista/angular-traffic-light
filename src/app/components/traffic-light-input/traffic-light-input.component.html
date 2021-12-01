@@ -1,0 +1,83 @@
+<form class="traffic-light-input-container" #trafficLightForm>
+  <div class="radios">
+    <div class="traffic-light-radio-container">
+      <input
+        type="radio"
+        [name]="name"
+        [(ngModel)]="value"
+        [defaultChecked]="checkItsDefaultChecked(trafficLightOptions.Pending)"
+        [value]="trafficLightOptions.Pending"
+        [id]="getRadioId(trafficLightOptions.Pending)"
+      />
+
+      <label
+        title="Pendente"
+        [for]="getRadioId(trafficLightOptions.Pending)"
+        [class]="getEnumTranslation(trafficLightOptions.Pending)"
+      >
+        <span class="fill"></span>
+      </label>
+    </div>
+
+    <div class="traffic-light-radio-container">
+      <input
+        type="radio"
+        [name]="name"
+        [(ngModel)]="value"
+        [defaultChecked]="
+          checkItsDefaultChecked(trafficLightOptions.Satisfactory)
+        "
+        [value]="trafficLightOptions.Satisfactory"
+        [id]="getRadioId(trafficLightOptions.Satisfactory)"
+      />
+
+      <label
+        title="Satisfatório"
+        [for]="getRadioId(trafficLightOptions.Satisfactory)"
+        [class]="getEnumTranslation(trafficLightOptions.Satisfactory)"
+        ><span class="fill"></span>
+      </label>
+    </div>
+
+    <div class="traffic-light-radio-container">
+      <input
+        type="radio"
+        [name]="name"
+        [(ngModel)]="value"
+        [defaultChecked]="
+          checkItsDefaultChecked(trafficLightOptions.Acceptable)
+        "
+        [value]="trafficLightOptions.Acceptable"
+        [id]="getRadioId(trafficLightOptions.Acceptable)"
+      />
+
+      <label
+        title="Razoável"
+        [for]="getRadioId(trafficLightOptions.Acceptable)"
+        [class]="getEnumTranslation(trafficLightOptions.Acceptable)"
+      >
+        <span class="fill"></span>
+      </label>
+    </div>
+
+    <div class="traffic-light-radio-container">
+      <input
+        type="radio"
+        [name]="name"
+        [(ngModel)]="value"
+        [defaultChecked]="
+          checkItsDefaultChecked(trafficLightOptions.Unsatisfactory)
+        "
+        [value]="trafficLightOptions.Unsatisfactory"
+        [id]="getRadioId(trafficLightOptions.Unsatisfactory)"
+      />
+
+      <label
+        title="Insatisfatório"
+        [for]="getRadioId(trafficLightOptions.Unsatisfactory)"
+        [class]="getEnumTranslation(trafficLightOptions.Unsatisfactory)"
+        ><span class="fill"></span>
+      </label>
+    </div>
+  </div>
+</form>

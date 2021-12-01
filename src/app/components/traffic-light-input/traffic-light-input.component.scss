@@ -1,0 +1,107 @@
+$pending-color: #c0bfbf;
+$acceptable-color: #ffd54f;
+$satisfactory-color: #31b452;
+$unsatisfactory-color: #e53935;
+
+.traffic-light-input-container {
+  width: fit-content;
+
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  > .radios {
+    gap: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+.traffic-light-radio-container {
+  > label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    width: 1.4rem;
+    height: 1.4rem;
+
+    padding: 0.2rem;
+
+    border: solid 2px;
+    border-radius: 50%;
+
+    &.pending {
+      border-color: $pending-color;
+    }
+
+    &.acceptable {
+      border-color: $acceptable-color;
+    }
+
+    &.satisfactory {
+      border-color: $satisfactory-color;
+    }
+
+    &.unsatisfactory {
+      border-color: $unsatisfactory-color;
+    }
+  }
+
+  > input[type="radio"] {
+    display: none;
+
+    &:hover + label {
+      > .fill {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        transition: background-color 0.25s ease-in-out;
+      }
+
+      &.pending > .fill {
+        background-color: lighten($color: $pending-color, $amount: 15%);
+      }
+
+      &.acceptable > .fill {
+        background-color: lighten($color: $acceptable-color, $amount: 15%);
+      }
+
+      &.satisfactory > .fill {
+        background-color: lighten($color: $satisfactory-color, $amount: 15%);
+      }
+
+      &.unsatisfactory > .fill {
+        background-color: lighten($color: $unsatisfactory-color, $amount: 15%);
+      }
+    }
+
+    &:checked + label {
+      > .fill {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      &.pending > .fill {
+        background-color: $pending-color;
+      }
+
+      &.acceptable > .fill {
+        background-color: $acceptable-color;
+      }
+
+      &.satisfactory > .fill {
+        background-color: $satisfactory-color;
+      }
+
+      &.unsatisfactory > .fill {
+        background-color: $unsatisfactory-color;
+      }
+    }
+  }
+}
