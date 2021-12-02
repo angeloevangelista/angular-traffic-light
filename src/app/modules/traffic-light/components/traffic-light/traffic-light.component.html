@@ -1,0 +1,24 @@
+<form class="traffic-light-input-container" #trafficLightForm>
+  <div class="radios">
+    <div
+      class="traffic-light-radio-container"
+      *ngFor="let radioValue of radioValuesArray"
+    >
+      <input
+        type="radio"
+        [name]="key"
+        [value]="radioValue"
+        [(ngModel)]="value"
+        [id]="getRadioId(radioValue)"
+      />
+
+      <label
+        [for]="getRadioId(radioValue)"
+        [title]="getEnumLabel(radioValue)"
+        [class]="getEnumTranslation(radioValue)"
+      >
+        <span class="fill"></span>
+      </label>
+    </div>
+  </div>
+</form>

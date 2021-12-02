@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { TrafficLightInputComponent } from '@components/traffic-light-input/traffic-light-input.component';
 import { FormsModule } from '@angular/forms';
 
+import { TrafficLightModule } from './modules/traffic-light/traffic-light.module';
+
 @NgModule({
-  declarations: [AppComponent, TrafficLightInputComponent],
-  imports: [BrowserModule, FormsModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule, TrafficLightModule],
   providers: [],
   bootstrap: [AppComponent],
 })

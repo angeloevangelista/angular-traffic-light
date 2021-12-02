@@ -1,5 +1,27 @@
+:root {
+  font-size: 67%;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body,
+input,
+button,
+textarea {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+}
+
+#root {
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+}
+
+.debug {
+  border: solid 1px red;
 }

@@ -1,5 +1,21 @@
-<div style="margin: 2rem">
-  <app-traffic-light-input name="1" [(ngModel)]="radioValue" ></app-traffic-light-input>
+<div class="container">
+  <div class="people">
+    <ul>
+      <li *ngFor="let person of people">
+        <app-traffic-light
+          [key]="person.id.toString()"
+          [(ngModel)]="person.status"
+          (ngModelChange)="updateJsonOutput()"
+        ></app-traffic-light>
 
-  <h1>Radio value: {{radioValue}}</h1>
+        <span>{{ person.name }}</span>
+      </li>
+    </ul>
+
+    <button (click)="printOnConsole()" class="console-button">Console!</button>
+  </div>
+
+  <div class="output">
+    <textarea disabled [value]="jsonOutput"></textarea>
+  </div>
 </div>
